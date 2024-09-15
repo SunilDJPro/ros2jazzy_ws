@@ -4,7 +4,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 
 
-class MinimalPublisher(Node):
+class SimplePub(Node):
 
     def __init__(self):
         super().__init__('simple_pub_py')
@@ -24,10 +24,11 @@ class MinimalPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_publisher = MinimalPublisher()
+    simple_pub = SimplePub()
 
-    rclpy.spin(minimal_publisher)
-    minimal_publisher.destroy_node()
+    rclpy.spin(simple_pub)
+    
+    simple_pub.destroy_node()
     rclpy.shutdown()
 
 
